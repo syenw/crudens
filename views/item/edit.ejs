@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<%- include('../parts/header_general') %>
+</head>
+<body class="container" style="margin-top: 50px;">
+	<% if (messages.error) { %>
+	<div class="alert alert-danger" role="alert"><%- messages.error %></div>
+	<% } %>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3">
+            <form action="/items/update" method="post">
+                <input type="hidden" class="form-control" name="id" value="<%= items.data_json.id %>" />
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= items.data_json.name %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input type="number" class="form-control" name="amount" value="<%= items.data_json.amount %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <a href="/items" class="btn btn-md btn-default" role="button">Back to previous page</a>
+                    <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                </div>
+            </form>
+            <%- include('../parts/footer_content') %>
+        </div>
+    </div>
+    <%- include('../parts/footer_general') %>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- DataTable Javascript -->
+<script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable({
+            columnDefs: [
+                { targets: 0, width: "", className: "", orderable: false, visible: false },
+                { targets: 3, width: "5%", className: "", orderable: false }
+            ]
+        });
+    });
+</script>
